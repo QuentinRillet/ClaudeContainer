@@ -25,6 +25,14 @@ Gardez le token affiché (par exemple dans un gestionnaire de secrets ou `~/.cla
 docker build -t claude-code .
 ```
 
+Une GitHub Action ([`.github/workflows/build-image.yml`](.github/workflows/build-image.yml)) build et publie aussi l'image sur GHCR à chaque push sur `main`. Pour l'utiliser sans build local :
+
+```bash
+docker pull ghcr.io/quentinrillet/claudecontainer:latest
+# puis remplacez 'claude-code' par cette image, ou :
+export IMAGE=ghcr.io/quentinrillet/claudecontainer:latest
+```
+
 ## 3. Démarrer des sessions
 
 ### Avec le script fourni
