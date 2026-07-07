@@ -39,8 +39,8 @@ export IMAGE=ghcr.io/quentinrillet/claudecontainer:latest
 
 ```bash
 export CLAUDE_CODE_OAUTH_TOKEN=<token>
-export GIT_USER_NAME="Quentin Rillet"
-export GIT_USER_EMAIL="quentin.rillet@gmail.com"
+export GIT_USER_NAME="user"
+export GIT_USER_EMAIL="usermail@gmail.com"
 
 ./new-session.sh projet-api ~/dev/projet-api
 ./new-session.sh projet-data ~/dev/projet-data
