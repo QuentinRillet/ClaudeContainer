@@ -16,8 +16,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # uv + uvx (gestionnaire de projets Python)
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
-# Claude Code
-RUN npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+# Claude Code (avec mise à jour préalable de npm : la version livrée avec
+# l'image de base vendore des dépendances avec des CVE corrigées upstream)
+RUN npm install -g npm@latest \
+    && npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN chmod 755 /usr/local/bin/entrypoint.sh

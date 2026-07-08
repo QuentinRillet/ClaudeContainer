@@ -1,0 +1,7 @@
+# Configuration hadolint (lint du Dockerfile)
+ignored:
+  # Pinner chaque paquet apt n'est pas praticable sur debian-slim,
+  # les versions bougent avec les mises à jour de sécurité de Debian
+  - DL3008
+  # La version de Claude Code est contrôlée par le build arg CLAUDE_CODE_VERSION
+  - DL3016
